@@ -1,85 +1,98 @@
-Vaadin Demo
-===================
+# Vaadin Demo
+
+A Java Web application demo project based on [Vaadin](https://vaadin.com/) and [Spring Boot](https://spring.io/projects/spring-boot). Demonstrates how to build modern enterprise-level Web applications using Vaadin.
+
+## Tech Stack
+
+- **Java**: 21
+- **Spring Boot**: 3.5.7
+- **Vaadin**: 24.9.3
+- **Spring Data JPA**: Data access layer
+- **H2 Database**: In-memory database (development environment)
+- **Maven**: Build tool
 
 ## Project Structure
 
-The sources of your Vaadin Demo have the following structure:
-
 ```
-src
-├── main/frontend
-│   └── themes
-│       └── default
-│           ├── styles.css
-│           └── theme.json
-├── main/java
-│   └── org/mvnsearch
-│       ├── base
-│       │   └── ui
-│       │       ├── component
-│       │       │   └── ViewToolbar.java
-│       │       ├── MainErrorHandler.java
-│       │       └── MainLayout.java
-│       ├── examplefeature
-│       │   ├── ui
-│       │   │   └── TaskListView.java
-│       │   ├── Task.java
-│       │   ├── TaskRepository.java
-│       │   └── TaskService.java                
-│       └── Application.java       
-└── test/java
-    └── org/mvnsearch
-        └── examplefeature
-           └── TaskServiceTest.java                 
+vaadin-demo/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── org/mvnsearch/...       # Java source code
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/             # Test code
+├── pom.xml               # Maven dependency configuration
+└── README.md
 ```
 
-The main entry point into the application is `Application.java`. This class contains the `main()` method that start up 
-the Spring Boot application.
+## Features
 
-The skeleton follows a *feature-based package structure*, organizing code by *functional units* rather than traditional 
-architectural layers. It includes two feature packages: `base` and `examplefeature`.
+- Vaadin component library
+- Spring Boot integration
+- Spring Data JPA
+- H2 database support
+- Reactive UI
+- Server-side rendering
+- Actuator monitoring endpoints
 
-* The `base` package contains classes meant for reuse across different features, either through composition or 
-  inheritance. You can use them as-is, tweak them to your needs, or remove them.
-* The `examplefeature` package is an example feature package that demonstrates the structure. It represents a 
-  *self-contained unit of functionality*, including UI components, business logic, data access, and an integration test.
-  Once you create your own features, *you'll remove this package*.
+## Quick Start
 
-The `src/main/frontend` directory contains an empty theme called `default`, based on the Lumo theme. It is activated in
-the `Application` class, using the `@Theme` annotation.
+### Prerequisites
 
-## Starting in Development Mode
+- Java 21 or higher
+- Maven 3.6+
 
-To start the application in development mode, import it into your IDE and run the `Application` class. 
-You can also start the application from the command line by running: 
+### Installation and Running
 
 ```bash
-./mvnw
+# Build project
+mvn clean package
+
+# Run application
+mvn spring-boot:run
+# Or
+java -jar target/vaadin-demo-1.0-SNAPSHOT.jar
 ```
 
-## Building for Production
+The application will start at `http://localhost:8080`.
 
-To build the application in production mode, run:
+## Project Features
 
-```bash
-./mvnw -Pproduction package
+### Vaadin Framework
+
+Vaadin is a server-driven Web framework:
+- **Server-side Rendering**: UI generated on the server
+- **Component Library**: Rich enterprise-level components
+- **Type Safety**: Type-safe UI development in Java
+- **Automatic Communication**: Automatic client-server communication handling
+
+### Spring Boot Integration
+
+- **Auto Configuration**: Vaadin Spring Boot Starter
+- **Dependency Injection**: Spring DI container
+- **Data Access**: Spring Data JPA
+- **Monitoring**: Spring Boot Actuator
+
+### View Development
+
+Vaadin views are regular Java classes:
+
+```java
+@Route("")
+public class MainView extends VerticalLayout {
+    public MainView() {
+        add(new H1("Welcome to Vaadin"));
+        add(new Button("Click me", e -> {
+            Notification.show("Button clicked!");
+        }));
+    }
+}
 ```
 
-To build a Docker image, run:
+## References
 
-```bash
-docker build -t my-application:latest .
-```
-
-If you use commercial components, pass the license key as a build secret:
-
-```bash
-docker build --secret id=proKey,src=$HOME/.vaadin/proKey .
-```
-
-## Getting Started
-
-The [Getting Started](https://vaadin.com/docs/latest/getting-started) guide will quickly familiarize you with your new
-Vaadin Demo implementation. You'll learn how to set up your development environment, understand the project 
-structure, and find resources to help you add muscles to your skeleton — transforming it into a fully-featured 
-application.
+- [Vaadin Official Website](https://vaadin.com/)
+- [Vaadin Documentation](https://vaadin.com/docs)
+- [Vaadin Spring Boot Integration](https://vaadin.com/docs/latest/integrations/spring/overview)
+- [Vaadin Components Documentation](https://vaadin.com/docs/latest/components)
