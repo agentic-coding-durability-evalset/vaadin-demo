@@ -16,6 +16,7 @@ This is a demo application with Vaadin and Spring Boot.
 - base package: `org.mvnsearch`
 - Vaadin base component package: `org.mvnsearch.base`
 - Vaadin application package: `org.mvnsearch.demo`
+- Vaadin application class: `org.mvnsearch.Application`
 
 ## Database
 
@@ -37,6 +38,7 @@ The project uses Maven as the build tool and [just](https://github.com/casey/jus
 - Use jspecify to annotate nullable and non-nullable types: `org.jspecify.annotations.NonNull` and
   `org.jspecify.annotations.Nullable`
 - Use slf4j for logging
+- Prefer java record instead of Java bean
 
 ## Configuration
 
