@@ -19,7 +19,9 @@ This is a demo application with Vaadin and Spring Boot.
 
 ## Database
 
-- Main database: H2
+- H2 in-memory database for development
+- JPA entities use `@GeneratedValue(strategy = GenerationType.SEQUENCE)`
+- Entity equality based on ID (see Task.equals/hashCode pattern)
 - ORM: Spring Data JPA
 
 ## Build and run
@@ -27,7 +29,8 @@ This is a demo application with Vaadin and Spring Boot.
 The project uses Maven as the build tool and [just](https://github.com/casey/just) as the task runner.
 
 - Build: `mvn -DskipTests package`
-- Run: `mvn spring-boot:run`
+- Run: `mvn -DskipTests spring-boot:run`
+- Release: `mvn -Pproduction -DskipTests clean package`
 
 ## Java Guide line
 
