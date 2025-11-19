@@ -57,6 +57,11 @@ java -jar target/vaadin-demo-1.0-SNAPSHOT.jar
 
 The application will start at `http://localhost:8080`.
 
+### AI integration
+
+Please add [MCP Server for Vaadin](https://vaadin.com/docs/latest/building-apps/mcp) to your agent.
+
+
 ## Project Features
 
 ### Vaadin Framework
