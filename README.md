@@ -103,3 +103,4 @@ public class MainView extends VerticalLayout {
 - [Vaadin Components Documentation](https://vaadin.com/docs/latest/components)
 - [Vaadin MCP Server](https://mcp.vaadin.com/docs/)
 - Introducing the official Vaadin MCP server: https://vaadin.com/blog/official-vaadin-mcp
+- [The Simon Martinelli Stack](https://martinelli.ch/the-simon-martinelli-stack-a-pragmatic-approach-to-full-stack-java-development/): A Pragmatic Approach to Full-Stack Java Development
