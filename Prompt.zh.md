@@ -38,6 +38,8 @@
 - account相关的代码，请放置在`org.mvnsearch.account` package下
 - 为account表添加默认数据，如user和admin账号
 - 添加顶部导航栏，在右侧显示登录后的用户头像和用户名，同时增加退出登录按钮
+
+请结合Vaadin MCP Server完成以上任务。
 ```
 
 ## 任务4
@@ -47,5 +49,5 @@
 **提示词：**
 
 ```
-请根据excalidraw文件中的钱包原型图，创建对应的Vaadin View，包括消费记录添加操作。
+请根据excalidraw文件中的钱包原型图并结合Vaadin Mcp Server，创建对应的Vaadin View和相关的repo, service等，包括消费记录添加操作。 
 ```
